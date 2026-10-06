@@ -1,0 +1,283 @@
+:root {
+    --primary-pink: #ff758c;
+    --secondary-pink: #ff7eb3;
+    --light-bg: #fff5f7;
+    --card-bg: #ffffff;
+    --text-dark: #2d2d2d;
+    --accent-purple: #9b51e0;
+    --border-color: #ffd1dc;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+/* Шапка сайту з емблемою коледжу */
+.site-header {
+    background: var(--card-bg);
+    border-bottom: 2px solid var(--border-color);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.college-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.college-logo {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--primary-pink), var(--accent-purple));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);
+}
+.college-logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover; /* Зберігає пропорції фото, заповнюючи круг */
+    border: 2px solid var(--primary-pink);
+    box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);
+}
+
+.main-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--primary-pink);
+}
+
+/* Кнопки */
+.btn-pink {
+    background: linear-gradient(135deg, var(--primary-pink), var(--secondary-pink));
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 117, 140, 0.4);
+    transition: transform 0.2s;
+}
+
+.btn-pink:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ЧИСТІ СТИЛІ ПРОФІЛЮ БЕЗ ЗАЙВИХ ФОНІВ */
+.profile-main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.user-card-clean {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid var(--border-color, #ffccd5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(255, 117, 140, 0.05);
+}
+
+.user-info-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: transparent !important; /* Примусово прибираємо будь-який фон */
+    border: none !important;
+}
+
+.user-avatar-badge {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, var(--primary-pink, #ff758c), var(--accent-purple, #7b2cbf));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: white;
+    flex-shrink: 0;
+}
+
+.user-name-title {
+    margin: 0 0 5px 0;
+    color: var(--text-dark, #333);
+    background: transparent !important;
+}
+
+.user-room-text {
+    margin: 0;
+    color: #777;
+    background: transparent !important;
+}
+
+.user-badges-row {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    background: transparent !important;
+}
+
+.badge-pink { color: var(--primary-pink, #ff758c); }
+.badge-dot { color: #ccc; margin: 0 8px; }
+.badge-purple { color: var(--accent-purple, #7b2cbf); }
+
+.profile-section-block {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    color: var(--accent-purple, #7b2cbf);
+    margin-bottom: 15px;
+}
+
+.rental-item-row {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color, #ffccd5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rental-item-title {
+    margin: 0 0 5px 0;
+}
+
+.rental-item-desc {
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.rental-status-tag {
+    background: #fff5f7;
+    color: var(--primary-pink, #ff758c);
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* --- ЧИСТІ ТА ЗБІЛЬШЕНІ СТИЛІ ДЛЯ СТОРІНКИ ДОДАВАННЯ РЕЧІ --- */
+.brand-subtitle {
+    font-size: 11px;
+    color: var(--text-muted, #888);
+}
+
+.header-balancer {
+    width: 140px;
+}
+
+/* Основний контейнер картки форми */
+.add-item-main {
+    max-width: 650px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 24px;
+    border: 2px solid var(--border-color, #ffccd5);
+    box-shadow: 0 6px 20px rgba(255, 117, 140, 0.08);
+}
+
+/* Заголовок форми */
+.add-item-title {
+    color: var(--accent-purple, #7b2cbf);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* Групи полів введення */
+.add-item-group {
+    margin-bottom: 22px;
+}
+
+.mb-large {
+    margin-bottom: 30px;
+}
+
+/* Збільшені мітки (Labels) */
+.add-item-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark, #333);
+    font-size: 16px;
+}
+
+/* Збільшені поля введення (Inputs) */
+.add-item-input {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 14px;
+    border: 1px solid var(--border-color, #ffccd5);
+    background: #ffffff;
+    color: var(--text-dark, #333);
+    box-sizing: border-box;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-item-input:focus {
+    border-color: var(--primary-pink, #ff758c);
+    box-shadow: 0 0 0 4px rgba(255, 117, 140, 0.15);
+}
+
+/* Кнопка публікації */
+.add-item-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+}
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій профіль | DormShare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header class="site-header">
+        <a href="index.html" class="college-brand">
+           <img src="./img/it_college_logo.jpeg" alt="Логотип коледжу" class="college-logo">
+            <span>IT college<br><small style="font-size: 11px; color: #888;">Гуртожиток №1</small></span>
+        </a>
+        <nav class="main-nav">
+            <a href="index.html">Головна</a>
+            <a href="dorm.html">Поверхи Гуртожитку</a>
+            <a href="add-item.html">Додати річ</a>
+            <a href="profile.html" class="active">Мій профіль</a>
+        </nav>
+        <button class="btn-pink" onclick="location.href='add-item.html'">+ Поділитися</button>
+    </header>
+
+    <!-- Головний вміст профілю -->
+    <main class="profile-main">
+        
+        <!-- Картка користувача -->
+        <div class="user-card-clean">
+            <div class="user-info-wrapper">
+                <div class="user-avatar-badge">💖</div>
+                <div>
+                    <h2 id="profile-name" class="user-name-title">Соломія</h2>
+                    <p id="profile-room" class="user-room-text">Гуртожиток №1, Кімната 312 • 3 поверх</p>
+                    <div class="user-badges-row">
+                        <span class="badge-pink">⭐ Рейтинг: 4.9</span> 
+                        <span class="badge-dot">•</span> 
+                        <span class="badge-purple">✨ Довірений сусід</span>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-pink" onclick="editProfile()">Редагувати</button>
+        </div>
+
+        <!-- Мої активні оголошення -->
+        <div class="profile-section-block">
+            <h3 class="section-title">📌 Мої речі для шерингу</h3>
+            <div id="my-ads-container"></div>
+        </div>
+
+        <!-- Історія бронювань -->
+        <div class="profile-section-block">
+            <h3 class="section-title">🤝 Що я зараз позичаю у сусідів</h3>
+            <div class="rental-item-row">
+                <div>
+                    <h4 class="rental-item-title">Праска для одягу</h4>
+                    <p class="rental-item-desc">Взято у кімнати 412 (4 поверх) • Повернути до завтра</p>
+                </div>
+                <span class="rental-status-tag">Активна оренда</span>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

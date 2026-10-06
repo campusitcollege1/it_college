@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додати річ | DormShare</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- Шапка сайту -->
+    <header class="site-header">
+        <a href="./index.html" class="college-brand">
+            <img src="./img/it_college_logo.jpeg" alt="Логотип коледжу" class="college-logo">
+            <span>IT college<br><small class="brand-subtitle">Гуртожиток №1</small></span>
+        </a>
+        
+        <nav class="main-nav">
+            <a href="./index.html">Головна</a>
+            <a href="./dorm.html">Поверхи Гуртожитку</a>
+            <a href="./add-item.html" class="active">Додати річ</a>
+            <a href="./profile.html">Мій профіль</a>
+        </nav>
+
+        <div class="header-balancer"></div>
+    </header>
+
+    <!-- Форма додавання речі зі збільшеним текстом і без зайвих контейнерів -->
+    <main class="add-item-main">
+        <h2 class="add-item-title">📦 Поділися або продай річ у гуртожитку</h2>
+        
+        <form id="add-item-form">
+            <div class="add-item-group">
+                <label class="add-item-label">Назва речі:</label>
+                <input type="text" id="item-title" class="add-item-input" placeholder="Наприклад: Мультиварка / Настільна гра" required>
+            </div>
+
+            <div class="add-item-group">
+                <label class="add-item-label">Номер кімнати та поверх:</label>
+                <input type="text" id="item-room" class="add-item-input" placeholder="Наприклад: Кімната 415, 4 поверх" required>
+            </div>
+
+            <div class="add-item-group">
+                <label class="add-item-label">Умови шерингу / ціна:</label>
+                <input type="text" id="item-price" class="add-item-input" placeholder="Наприклад: Безкоштовно на день / 100 грн" required>
+            </div>
+
+            <div class="add-item-group mb-large">
+                <label class="add-item-label">Емодзі речі (іконка):</label>
+                <input type="text" id="item-icon" class="add-item-input" placeholder="Наприклад: 🔌, ☕, 📚">
+            </div>
+
+            <button type="submit" class="btn-pink add-item-btn">Опублікувати оголошення</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поверхи Гуртожитку №1 | DormShare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="index.html" class="college-brand">
+           <img src="./img/it_college_logo.jpeg" alt="Логотип коледжу" class="college-logo">
+            <span>IT college<br><small style="font-size: 11px; color: #888;">Гуртожиток №1</small></span>
+        </a>
+        <nav class="main-nav">
+            <a href="index.html">Головна</a>
+            <a href="dorm.html" class="active">Поверхи Гуртожитку</a>
+            <a href="add-item.html">Додати річ</a>
+            <a href="profile.html">Мій профіль</a>
+        </nav>
+        <button class="btn-pink" onclick="location.href='add-item.html'">+ Поділитися</button>
+    </header>
+
+    <main style="max-width: 900px; margin: 40px auto; padding: 0 20px; text-align: center;">
+        <h1 style="color: var(--accent-purple);">🏠 Гуртожиток №1 — Навігація по поверхах</h1>
+        <p style="color: #666; margin-bottom: 30px;">Обери поверх, щоб дізнатися, у кого які речі є в наявності для шерингу:</p>
+
+        <!-- Вибір поверхів (5 поверхів) -->
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+            <div style="background: white; padding: 20px; border-radius: 12px; border: 2px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                <h3>✨ 5 поверх (Студентська романтика & Активісти)</h3>
+                <button class="btn-pink" onclick="alert('На 5 поверсі доступно: настільні ігри, фен, сукні.')">Переглянути речі (12)</button>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 12px; border: 2px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                <h3>✨ 4 поверх (Курсові та праски)</h3>
+                <button class="btn-pink" onclick="alert('На 4 поверсі доступно: праска, прасувальна дошка, кавоварка.')">Переглянути речі (8)</button>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 12px; border: 2px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                <h3>✨ 3 поверх (IT-сектор та паяльники)</h3>
+                <button class="btn-pink" onclick="alert('На 3 поверсі доступно: подовжувачі, паяльник, набір інструментів.')">Переглянути речі (15)</button>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 12px; border: 2px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                <h3>✨ 2 поверх (Першокурсники)</h3>
+                <button class="btn-pink" onclick="alert('На 2 поверсі доступно: підручники, посуд, настільна лампа.')">Переглянути речі (20)</button>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 12px; border: 2px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                <h3>✨ 1 поверх (Адмін-зона та спорт інвентар)</h3>
+                <button class="btn-pink" onclick="alert('На 1 поверсі доступно: м’ячі, килимки для йоги, гантелі.')">Переглянути речі (5)</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

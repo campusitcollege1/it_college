@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DormShare | Студентський маркетплейс Гуртожитку №1</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header class="site-header">
+        <a href="./index.html" class="college-brand">
+             <img src="./img/it_college_logo.jpeg" alt="Логотип коледжу" class="college-logo">
+            <span>IT college<br><small style="font-size: 11px; color: #888;">Гуртожиток №1</small></span>
+        </a>
+        <nav class="main-nav">
+            <a href="./index.html" class="active">Головна</a>
+            <a href="./dorm.html">Поверхи Гуртожитку</a>
+            <a href="./add-item.html">Додати річ</a>
+            <a href="./profile.html">Мій профіль</a>
+        </nav>
+        <button class="btn-pink" onclick="location.href='./add-item.html'">+ Поділитися</button>
+    </header>
+
+    <!-- Головний банер -->
+    <section style="text-align: center; padding: 50px 20px; background: linear-gradient(180deg, #fff5f7 0%, #ffe6ee 100%);">
+        <h1 style="color: var(--accent-purple); font-size: 36px; margin-bottom: 10px;">Шеринг та маркет у Гуртожитку №1 💕</h1>
+        <p style="color: #666; font-size: 18px; max-width: 600px; margin: 0 auto 20px;">Бери на час праску, конспекти, сукню на вечірку чи купуй потрібні речі у сусідів без зайвих витрат!</p>
+        <input type="text" id="search-input" placeholder="Шукати чайник, сукню, атлас..." style="padding: 12px 20px; width: 300px; border-radius: 20px; border: 2px solid var(--border-color); outline: none;">
+
+    <!-- Сітка товарів / речей -->
+    <main style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+        <h2 style="color: var(--text-dark); margin-bottom: 20px;">🔥 Популярне в гуртожитку зараз</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            
+<!-- Панель пошуку та фільтрації 
+<section style="max-width: 1200px; margin: 30px auto; padding: 0 20px;">
+    <div style="display: flex; gap: 15px; flex-wrap: wrap; background: white; padding: 20px; border-radius: 16px; border: 2px solid var(--border-color); box-shadow: 0 4px 15px rgba(255, 117, 140, 0.05);">
+        <!-- Пошук по назві 
+        <input type="text" id="search-input" placeholder="🔍 Пошук речі..." style="flex: 2; min-width: 200px; padding: 12px 16px; border-radius: 10px; border: 1px solid var(--border-color); font-size: 14px; outline: none;">
+        
+        <!-- Фільтр по поверхах 
+        <select id="floor-filter" style="flex: 1; min-width: 150px; padding: 12px 16px; border-radius: 10px; border: 1px solid var(--border-color); font-size: 14px; background: white; outline: none;">
+            <option value="all">Усі поверхи</option>
+            <option value="1">1 поверх</option>
+            <option value="2">2 поверх</option>
+            <option value="3">3 поверх</option>
+            <option value="4">4 поверх</option>
+            <option value="5">5 поверх</option>
+        </select>
+    </div>
+</section> -->
+
+
+            <!-- Динамічний контейнер для речей із localStorage -->
+            <div id="items-grid" style="display: contents;"></div>
+
+            <!-- Картка 1 
+            <div style="background: var(--card-bg); border-radius: 15px; padding: 15px; border: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="height: 150px; background: #ffd1dc; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 40px;">🔌</div>
+                    <h3 style="margin: 15px 0 5px;">Подовжувач на 3 метри</h3>
+                    <p style="font-size: 14px; color: #777;">Кімната 312 (3 поверх) • Безкоштовно на день</p>
+                </div>
+                <button class="btn-pink" style="width: 100%; margin-top: 10px;" onclick="alert('Зв’язуємося з власником!')">Взяти нагодинник</button>
+            </div>
+
+            <!-- Картка 2 
+            <div style="background: var(--card-bg); border-radius: 15px; padding: 15px; border: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="height: 150px; background: #e2d9f3; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 40px;">👗</div>
+                    <h3 style="margin: 15px 0 5px;">Сукня на студентську вечірку (S)</h3>
+                    <p style="font-size: 14px; color: #777;">Кімната 504 (5 поверх) • Шоколадка за оренду</p>
+                </div>
+                <button class="btn-pink" style="width: 100%; margin-top: 10px;" onclick="alert('Зв’язуємося з власником!')">Забронювати</button>
+            </div>
+
+            <!-- Картка 3 
+            <div style="background: var(--card-bg); border-radius: 15px; padding: 15px; border: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="height: 150px; background: #ffeaa7; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 40px;">📚</div>
+                    <h3 style="margin: 15px 0 5px;">Підручник з вищої математики</h3>
+                    <p style="font-size: 14px; color: #777;">Кімната 201 (2 поверх) • Продаж: 100 грн</p>
+                </div>
+                <button class="btn-pink" style="width: 100%; margin-top: 10px;" onclick="alert('Зв’язуємося з власником!')">Купити</button>
+            </div>
+
+        </div>-->
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
