@@ -286,111 +286,10 @@ body {
 }
 
 
-.burger-btn {
-    display: none !important;
-}
-
-.main-nav {
-    display: flex !important;
-}
 
 /* ==========================================
-   АДАПТАЦІЯ ДЛЯ ЕКРАНІВ 375px (iPhone SE / Mini)
+   СТИЛІ ЗА ЗАВУМЧУВАННЯМ (ПК та планшети)
    ========================================== */
-@media screen and (max-width: 375px) {
-    
-    /* Базові відступи сторінки */
-    body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        max-width: 375px;
-        overflow-x: hidden;
-        font-size: 14px;
-    }
-
-    /* 1. Шапка та навігація */
-    header, nav {
-        flex-direction: column !important;
-        align-items: center !important;
-        padding: 10px 8px !important;
-        width: 100% !important;
-        box-sizing: border-box;
-    }
-
-    header nav ul, .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 6px !important;
-        padding: 0 !important;
-        margin: 5px 0 0 0 !important;
-    }
-
-    header nav a, .nav-links a {
-        font-size: 12px !important;
-        padding: 5px 8px !important;
-    }
-
-    /* 2. Поле пошуку на головній */
-    section {
-        padding: 0 8px !important;
-        width: 100% !important;
-        box-sizing: border-box;
-    }
-
-    #search-input, input[type="text"] {
-        width: 100% !important;
-        max-width: 359px !important; /* 375px мінус відступи */
-        box-sizing: border-box;
-        font-size: 16px !important; /* Захист від зуму в iOS */
-        padding: 10px 12px !important;
-    }
-
-    /* 3. Картки речей (один стовпчик чітко по центру) */
-    .items-grid, main, .container {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 12px !important;
-        width: 100% !important;
-        padding: 0 8px !important;
-        box-sizing: border-box;
-    }
-
-    .item-card {
-        width: 100% !important;
-        max-width: 355px !important;
-        margin: 0 auto !important;
-        box-sizing: border-box;
-    }
-
-    /* 4. Форми (Додавання речі та профіль) */
-    form, .add-item-main, .user-card-clean {
-        width: 95% !important;
-        max-width: 355px !important;
-        margin: 10px auto !important;
-        padding: 12px !important;
-        box-sizing: border-box;
-    }
-
-    input, select, textarea {
-        width: 100% !important;
-        box-sizing: border-box;
-        font-size: 16px !important;
-    }
-
-    /* 5. Кнопки на повну ширину екрана */
-    button {
-        width: 100% !important;
-        padding: 12px !important;
-        font-size: 15px !important;
-        box-sizing: border-box;
-    }
-
-
-
-/* 1. За замовчуванням (для ПК та планшетів) — бургер ПРИХОВАНИЙ, меню ВИДИМЕ */
 .burger-btn {
     display: none !important;
 }
@@ -400,35 +299,52 @@ body {
 }
 
 
+/* ==========================================
+   МОБІЛЬНА АДАПТАЦІЯ (екрани до 768px)
+   ========================================== */
+@media screen and (max-width: 768px) {
 
-.college-brand {
+    /* Базові налаштування шапки */
+    .site-header {
+        position: relative !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 12px !important;
+        flex-wrap: nowrap !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* 1. Порядок елементів у шапці */
+    .college-brand {
         order: 1;
     }
 
-
-.burger-btn {
+    /* Кнопка бургер зліва біля логотипу */
+    .burger-btn {
         display: block !important;
         order: 2;
-        margin-right: auto; /* Штовхає решту елементів (кнопку поділитися) в самий правий кут */
-        margin-left: 12px;  /* Невеликий відступ від логотипу */
+        margin-right: auto;
+        margin-left: 10px;
         background: none;
         border: none;
-        font-size: 28px;
+        font-size: 26px;
         cursor: pointer;
         color: var(--text-color, #333);
         padding: 0;
         z-index: 1001;
     }
 
-
+    /* Кнопка «Поділитися» праворуч */
     .btn-pink {
         order: 3;
-        font-size: 13px !important;
-        padding: 8px 12px !important;
+        font-size: 12px !important;
+        padding: 6px 10px !important;
+        white-space: nowrap;
     }
 
-
-    /* Повністю ховаємо звичайне меню за замовчуванням на телефонах */
+    /* 2. Випадаюче меню навігації */
     .nav-links {
         display: none !important;
         width: 100%;
@@ -442,9 +358,10 @@ body {
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         border-bottom: 2px solid var(--border-color, #ffd1dc);
         z-index: 1000;
+        margin: 0;
     }
 
-    /* Меню з'являється ВИКЛЮЧНО коли є клас .active */
+    /* Меню відкривається ТІЛЬКИ коли є клас .active */
     .nav-links.active {
         display: flex !important;
     }
@@ -454,11 +371,16 @@ body {
         width: 100%;
         text-align: center;
         font-size: 16px;
+        text-decoration: none;
     }
-.user-card-clean, [class*="profile-card"] {
+
+    /* 3. Точкове вирівнювання картки профілю та кнопки редагування */
+    .user-card-clean, [class*="profile-card"] {
         display: flex !important;
         flex-direction: column !important;
         align-items: flex-start !important;
+        width: 100% !important;
+        box-sizing: border-box;
     }
 
     .user-card-clean button, 
@@ -467,7 +389,6 @@ body {
         position: static !important;
         margin-top: 12px !important;
         align-self: flex-start !important;
+        width: auto !important; /* Щоб кнопка редагування не розтягувалась на всю ширину */
     }
 }
-
-
