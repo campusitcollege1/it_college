@@ -7,19 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header class="site-header">
-        <a href="index.html" class="college-brand">
-           <img src="./img/it_college_logo.jpeg" alt="Логотип коледжу" class="college-logo">
+<header class="site-header">
+        <a href="./index.html" class="college-brand">
+             <img src="./img/it_college_logo.jpeg" alt="Логотип коледжу" class="college-logo">
             <span>IT college<br><small style="font-size: 11px; color: #888;">Гуртожиток №1</small></span>
         </a>
-        <nav class="main-nav">
-            <a href="index.html">Головна</a>
-            <a href="dorm.html" class="active">Поверхи Гуртожитку</a>
-            <a href="add-item.html">Додати річ</a>
-            <a href="profile.html">Мій профіль</a>
+
+        <!-- Кнопка бургера з правильним id -->
+        <button class="burger-btn" id="burgerToggle" aria-label="Відкрити меню">
+            ☰
+        </button>
+
+        <!-- Додали id="navLinks" до твого класу main-nav -->
+        <nav class="nav-links" id="navLinks">
+            <a href="./index.html" class="active">Головна</a>
+            <a href="./dorm.html">Поверхи Гуртожитку</a>
+            <a href="./add-item.html">Додати річ</a>
+            <a href="./profile.html">Мій профіль</a>
         </nav>
-        <button class="btn-pink" onclick="location.href='add-item.html'">+ Поділитися</button>
+
+        <button class="btn-pink" onclick="location.href='./add-item.html'">+ Поділитися</button>
     </header>
 
     <main style="max-width: 900px; margin: 40px auto; padding: 0 20px; text-align: center;">

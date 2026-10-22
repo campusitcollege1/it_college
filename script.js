@@ -224,3 +224,30 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const burgerToggle = document.getElementById("burgerToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    if (burgerToggle && navLinks) {
+        burgerToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            
+            // Зміна іконки на хрестик або гамбургер
+            if (navLinks.classList.contains("active")) {
+                burgerToggle.textContent = "✕";
+            } else {
+                burgerToggle.textContent = "☰";
+            }
+        });
+
+        // Закривати меню при кліку на будь-яке посилання в ньому
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+                burgerToggle.textContent = "☰";
+            });
+        });
+    }
+});

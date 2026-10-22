@@ -63,23 +63,27 @@ body {
     border: 2px solid var(--primary-pink);
     box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);
 }
-
-.main-nav {
+.nav-links {
     display: flex;
     gap: 20px;
     align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.main-nav a {
+.nav-links a {
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--text-dark, #333);
     font-weight: 600;
     transition: color 0.3s;
 }
 
-.main-nav a:hover, .main-nav a.active {
-    color: var(--primary-pink);
+.nav-links a:hover, 
+.nav-links a.active {
+    color: var(--primary-pink, #ff758c);
 }
+
 
 /* Кнопки */
 .btn-pink {
@@ -280,4 +284,190 @@ body {
     font-weight: 600;
     border: none;
 }
+
+
+.burger-btn {
+    display: none !important;
+}
+
+.main-nav {
+    display: flex !important;
+}
+
+/* ==========================================
+   АДАПТАЦІЯ ДЛЯ ЕКРАНІВ 375px (iPhone SE / Mini)
+   ========================================== */
+@media screen and (max-width: 375px) {
+    
+    /* Базові відступи сторінки */
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        max-width: 375px;
+        overflow-x: hidden;
+        font-size: 14px;
+    }
+
+    /* 1. Шапка та навігація */
+    header, nav {
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 10px 8px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    header nav ul, .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px !important;
+        padding: 0 !important;
+        margin: 5px 0 0 0 !important;
+    }
+
+    header nav a, .nav-links a {
+        font-size: 12px !important;
+        padding: 5px 8px !important;
+    }
+
+    /* 2. Поле пошуку на головній */
+    section {
+        padding: 0 8px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    #search-input, input[type="text"] {
+        width: 100% !important;
+        max-width: 359px !important; /* 375px мінус відступи */
+        box-sizing: border-box;
+        font-size: 16px !important; /* Захист від зуму в iOS */
+        padding: 10px 12px !important;
+    }
+
+    /* 3. Картки речей (один стовпчик чітко по центру) */
+    .items-grid, main, .container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+        width: 100% !important;
+        padding: 0 8px !important;
+        box-sizing: border-box;
+    }
+
+    .item-card {
+        width: 100% !important;
+        max-width: 355px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box;
+    }
+
+    /* 4. Форми (Додавання речі та профіль) */
+    form, .add-item-main, .user-card-clean {
+        width: 95% !important;
+        max-width: 355px !important;
+        margin: 10px auto !important;
+        padding: 12px !important;
+        box-sizing: border-box;
+    }
+
+    input, select, textarea {
+        width: 100% !important;
+        box-sizing: border-box;
+        font-size: 16px !important;
+    }
+
+    /* 5. Кнопки на повну ширину екрана */
+    button {
+        width: 100% !important;
+        padding: 12px !important;
+        font-size: 15px !important;
+        box-sizing: border-box;
+    }
+
+
+
+/* 1. За замовчуванням (для ПК та планшетів) — бургер ПРИХОВАНИЙ, меню ВИДИМЕ */
+.burger-btn {
+    display: none !important;
+}
+
+.nav-links {
+    display: flex !important;
+}
+
+
+
+.college-brand {
+        order: 1;
+    }
+
+
+.burger-btn {
+        display: block !important;
+        order: 2;
+        margin-right: auto; /* Штовхає решту елементів (кнопку поділитися) в самий правий кут */
+        margin-left: 12px;  /* Невеликий відступ від логотипу */
+        background: none;
+        border: none;
+        font-size: 28px;
+        cursor: pointer;
+        color: var(--text-color, #333);
+        padding: 0;
+        z-index: 1001;
+    }
+
+
+    .btn-pink {
+        order: 3;
+        font-size: 13px !important;
+        padding: 8px 12px !important;
+    }
+
+
+    /* Повністю ховаємо звичайне меню за замовчуванням на телефонах */
+    .nav-links {
+        display: none !important;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 15px 0;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border-bottom: 2px solid var(--border-color, #ffd1dc);
+        z-index: 1000;
+    }
+
+    /* Меню з'являється ВИКЛЮЧНО коли є клас .active */
+    .nav-links.active {
+        display: flex !important;
+    }
+
+    .nav-links a {
+        padding: 12px 0;
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+    }
+.user-card-clean, [class*="profile-card"] {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    .user-card-clean button, 
+    .user-card-clean .edit-btn, 
+    [class*="profile"] button {
+        position: static !important;
+        margin-top: 12px !important;
+        align-self: flex-start !important;
+    }
+}
+
 

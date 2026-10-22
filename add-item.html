@@ -11,18 +11,24 @@
     <!-- Шапка сайту -->
     <header class="site-header">
         <a href="./index.html" class="college-brand">
-            <img src="./img/it_college_logo.jpeg" alt="Логотип коледжу" class="college-logo">
-            <span>IT college<br><small class="brand-subtitle">Гуртожиток №1</small></span>
+             <img src="./img/it_college_logo.jpeg" alt="Логотип коледжу" class="college-logo">
+            <span>IT college<br><small style="font-size: 11px; color: #888;">Гуртожиток №1</small></span>
         </a>
-        
-        <nav class="main-nav">
-            <a href="./index.html">Головна</a>
+
+        <!-- Кнопка бургера з правильним id -->
+        <button class="burger-btn" id="burgerToggle" aria-label="Відкрити меню">
+            ☰
+        </button>
+
+        <!-- Додали id="navLinks" до твого класу main-nav -->
+        <nav class="nav-links" id="navLinks">
+            <a href="./index.html" class="active">Головна</a>
             <a href="./dorm.html">Поверхи Гуртожитку</a>
-            <a href="./add-item.html" class="active">Додати річ</a>
+            <a href="./add-item.html">Додати річ</a>
             <a href="./profile.html">Мій профіль</a>
         </nav>
 
-        <div class="header-balancer"></div>
+        <button class="btn-pink" onclick="location.href='./add-item.html'">+ Поділитися</button>
     </header>
 
     <!-- Форма додавання речі зі збільшеним текстом і без зайвих контейнерів -->
